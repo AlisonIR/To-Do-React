@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.completed{
+    background-color: green;
+    text-decoration: overline;
+}
+
+.not-completed{
+background-color: violet;
+}

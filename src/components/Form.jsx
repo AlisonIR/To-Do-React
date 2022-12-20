@@ -8,7 +8,6 @@ const Form = () => {
 
   const inputData = (e) => {
     setTask(e.target.value);
-    
   };
 
   const addTask = (e) => {
@@ -27,8 +26,6 @@ const Form = () => {
     setList(taskList);
 
     setTask("");
-
-
   };
 
   const deleteTask = (id) => {
@@ -46,7 +43,9 @@ const Form = () => {
 
   return (
     <div className="flex flex-col justify-center ">
-      <h1 className="text-center text-2xl text-white font-medium mt-5 ">My tasks for today</h1>
+      <h1 className="text-center text-2xl text-white font-medium mt-5 ">
+        My tasks for today
+      </h1>
       <form onSubmit={addTask} className="flex flex-col justify-center">
         <input
           onChange={inputData}
@@ -55,18 +54,12 @@ const Form = () => {
           placeholder="Add a new task"
           className="w-[230px] mx-auto mt-5 h-8 text-center rounded-md"
         ></input>
-        <button className="bg-gradient-to-r from-[#333399] to-[#ff00cc] mx-auto w-5 h-5 mt-2 ">
-          <MdArrowRightAlt size={15}/>
+        <button className="bg-gradient-to-r from-[#333399] to-[#ff00cc] mx-auto w-6 h-6 mt-2 ">
+          <MdArrowRightAlt size={25} />
         </button>
 
         {list.map((item) => {
-          return (
-            <Task
-              key={item.id}
-              item={item}
-              deleteTask={deleteTask}
-             />
-          );
+          return <Task key={item.id} item={item} deleteTask={deleteTask} />;
         })}
       </form>
     </div>
